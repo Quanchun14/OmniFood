@@ -131,6 +131,7 @@ body {
 .btn,
 .btn:link,
 .btn:visited {
+  text-align: center;
   cursor: pointer;
   font-size: 2rem;
   font-weight: 600;
@@ -207,30 +208,30 @@ li:not(:last-child) {
 }
 
 .margin--bottom-no {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
 .margin--bottom-vtiny {
-  margin-bottom: 1.4rem !important;
+  margin-bottom: 1.4rem;
 }
 
 .margin--bottom-tiny {
-  margin-bottom: 1.6rem !important;
+  margin-bottom: 1.6rem;
 }
 
 .margin--bottom-small {
-  margin-bottom: 2.4rem !important;
+  margin-bottom: 2.4rem;
 }
 .margin--bottom-medium {
-  margin-bottom: 3.2rem !important;
+  margin-bottom: 3.2rem;
 }
 
 .margin--bottom-mmedium {
-  margin-bottom: 6.4rem !important;
+  margin-bottom: 6.4rem;
 }
 
 .margin--bottom-large {
-  margin-bottom: 9.6rem !important;
+  margin-bottom: 9.6rem;
 }
 
 *:focus {

@@ -2,9 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Omnifood is an AI-powered food subscription that will make you eat healthy again, 365 days per year. It's tailored to your personal tastes and nutritional needs"
+    />
+    <link rel="icon" href="image/favicon.png" />
+    <link rel="apple-touch-icon" href="image/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,27 +27,32 @@
       <a href="#">
         <img src="image/omnifood-logo.png" alt="omnifood logo" class="logo" />
       </a>
-      <nav class="main-nav">
+      <nav class="main-nav open-nav">
         <ul class="main-nav-list">
           <li>
-            <a href="#" class="main-nav-link">How it works</a>
+            <a href="#how" class="main-nav-link">How it works</a>
           </li>
           <li>
-            <a href="#" class="main-nav-link">Meals</a>
+            <a href="#meal" class="main-nav-link">Meals</a>
           </li>
           <li>
-            <a href="#" class="main-nav-link">Testimonials</a>
+            <a href="#testimonial" class="main-nav-link">Testimonials</a>
           </li>
           <li>
-            <a href="#" class="main-nav-link">Pricing</a>
+            <a href="#price" class="main-nav-link">Pricing</a>
           </li>
           <li>
-            <a href="#" class="main-nav-link nav-cta btn--full-fill"
+            <a href="#cta" class="main-nav-link nav-cta btn--full-fill"
               >Try it for free</a
             >
           </li>
         </ul>
       </nav>
+
+      <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
     </header>
     <main>
       <section class="section-hero">
@@ -52,9 +66,9 @@
               eat healthy again. Tailored to your personal tastes and
               nutritional needs.
             </p>
-            <div class="hero-btn-box margin--bottom-medium">
-              <a href="#" class="btn btn--full-fill">Start eating well</a>
-              <a href="#" class="btn btn--inside-fill"
+            <div class="hero-btn-box">
+              <a href="#cta" class="btn btn--full-fill">Start eating well</a>
+              <a href="#how" class="btn btn--inside-fill"
                 >Learn more &downarrow;</a
               >
             </div>
@@ -139,7 +153,7 @@
           />
         </div>
       </section>
-      <section class="section-how">
+      <section class="section-how" id="how">
         <div class="container margin--bottom-large">
           <span class="sub-heading margin--bottom-tiny">How it works</span>
           <h2 class="heading-secondary">
@@ -208,7 +222,7 @@
           </div>
         </div>
       </section>
-      <section class="section-meals">
+      <section class="section-meals" id="meal">
         <div class="container margin--bottom-large">
           <span class="sub-heading item-self--center margin--bottom-tiny"
             >Meals</span
@@ -376,7 +390,10 @@
           <a href="#" class="link">See all recipes &rarr;</a>
         </div>
       </section>
-      <section class="testimonials-section grid--2-columns grid--center-x">
+      <section
+        class="testimonials-section grid--2-columns grid--center-x"
+        id="testimonial"
+      >
         <div class="testimonials-container">
           <span class="sub-heading margin--bottom-tiny"> Testimonials </span>
           <h2 class="heading-secondary margin--bottom-large">
@@ -529,7 +546,7 @@
           </figure>
         </div>
       </section>
-      <section class="price-section">
+      <section class="price-section" id="price">
         <div class="container margin--bottom-large">
           <span class="sub-heading margin--bottom-tiny">Pricing</span>
           <h2 class="heading-secondary">
@@ -577,7 +594,7 @@
               </ul>
             </div>
             <div class="card-btn">
-              <a href="#" class="btn btn--full-fill">Start eating well</a>
+              <a href="#cta" class="btn btn--full-fill">Start eating well</a>
             </div>
           </div>
           <div class="price-card price-card--complete">
@@ -623,7 +640,7 @@
               </ul>
             </div>
             <div class="card-btn">
-              <a href="#" class="btn btn--full-fill">Start eating well</a>
+              <a href="#cta" class="btn btn--full-fill">Start eating well</a>
             </div>
           </div>
         </div>
@@ -684,7 +701,7 @@
           </div>
         </div>
       </section>
-      <section class="section-cta margin--bottom-large">
+      <section class="section-cta margin--bottom-large" id="cta">
         <div class="container">
           <div class="cta">
             <div class="cta-text-box">
@@ -696,18 +713,26 @@
                 eating well today. You can cancel or pause anytime. And the
                 first meal is on us!
               </p>
-              <form class="cta-form">
+              <form class="cta-form" name="sign-up" netlify>
                 <div>
-                  <label for="name">Full name</label>
-                  <input type="text" placeholder="Quan Tran" required />
+                  <label for="full-name">Full name</label>
+                  <input
+                    id="full-name"
+                    type="text"
+                    placeholder="Quan Tran"
+                    name="full-name"
+                    required
+                  />
                 </div>
                 <div>
-                  <label for="email">Email address</label>
+                  <label id="email" name="email" for="email"
+                    >Email address</label
+                  >
                   <input type="email" placeholder="me@example.com" required />
                 </div>
                 <div>
                   <label for="select-where">Where did you hear about us</label>
-                  <select name="select-where" required>
+                  <select id="select-where" name="select-where" required>
                     <option value>Please choose one option</option>
                     <option value="friends">Friends and Family</option>
                     <option value="youtube">Youtube video</option>
@@ -799,6 +824,11 @@
         </nav>
       </div>
     </footer>
+    <script defer src="script.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
